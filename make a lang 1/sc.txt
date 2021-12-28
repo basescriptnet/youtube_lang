@@ -1,0 +1,57 @@
+So you want to make your language! Great! Let's get the
+rigth tools and proceed to our plan!
+First, we are going to use Node.js, so...make sure you
+got Node.js!
+Next, let's open up our console and install bunch of
+useful npm packages, but before that, run npm init -y to
+skip all the boring questions. We'll change them later.
+Now type npm install js-beautify, moo, nearley and yargs.
+Just wait couple days... seconds, until the packages are
+installed.
+Now, let's create the lib folder, and inside of it 
+we will have compiler and the grammar folders
+for the compiler and grammar files.
+Inside of the grammar folder we will create the nearley
+files. Let's create main.ne file, and place this little
+snippet inside of it, which will allow us to use the moo
+tokenizer.
+Let's feed the compile method of the moo library with some
+entrees to recognize whitespace with comments, numbers,
+identifiers, a couple of keywords, and symbols. The source
+code will be down in the description, so don't hesitate
+to copy this peace of code, and keep following the 
+explanation!
+OK, we are done with the tokenizer for now, so let's
+create the grammar. Let's define the most important part
+of the language, the whitespace! For readability, we'll use
+the underscore for it. A single underscore will represent
+an optional whitespace, and two of 'em the mandary
+whitespace. We will call the main item of our
+grammar the "PROCESS", and will pass a single value to it,
+which will be the "statements", and we will define the
+postprocess function for it, which will just return the
+first element of the array. Now we can define our
+statements. It will be optional whitespace, a statement,
+and from this array let's return only the statement
+without the whitespace, and we will set it to 0 or more,
+and a whitespace at the end. This whole construction will
+also return the id, meaning the first element of the array!
+A statement itself can be just a number for now. And
+finally, let's define the number! The postprocess for it
+will replace the underscores between the numbers of v[0].
+Now, our sample grammar is ready, so let's proceed to the
+next step.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
